@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>OTP</title>
+
+    <link rel="icon" href="Images/Icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="form-box">
+
+        <h1>E-Mail Verification</h1>
+
+        <hr>
+
+        <input type="email" id="email-input" placeholder="Enter Your E-Mail Address">
+
+        <input type="submit" id="submit-button" value="Send OTP" onclick="send_otp()">
+
+        <hr>
+
+        <input type="text" id="otp-input" placeholder="Enter Your OTP">
+
+        <input type="submit" id="verify-otp-button" value="Verify OTP" onclick="verify_otp()">
+
+        <p id="verification-result"></p>
+
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
