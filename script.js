@@ -23,7 +23,7 @@ function send_otp() {
 
 function verify_otp() {
     if (otp_input.value == "") {
-        alert("Please Enter Your OTP");
+        alert("Please Enter Your OTP!");
         return;
     }
     if (Number(otp_input.value) == generated_otp) {
