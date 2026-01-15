@@ -4,7 +4,7 @@ let verification_result = document.getElementById("verification-result");
 
 // ------------------------------------------------------------------------------------------------
 
-let generated_otp = Math.floor(100000 + Math.random() * 900000);
+let generated_otp;
 
 // ------------------------------------------------------------------------------------------------
 
@@ -13,9 +13,9 @@ function send_otp() {
         alert("Please Enter Your Email");
         return;
     }
-    console.log(generated_otp);
+    generated_otp = Math.floor(100000 + Math.random() * 900000);
     let subject = "OTP Verification";
-    let body = `This Is Your OTP : ${generated_otp}\n\nDo Not Share It With Anyone!`;
+    let body = `This Is Your OTP : ${generated_otp} \n\n Do Not Share It With Anyone!`;
     window.location.href = `mailto:${email_input.value}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 };
 
@@ -26,7 +26,7 @@ function verify_otp() {
         alert("Please Enter Your OTP");
         return;
     }
-    if (otp_input.value == generated_otp) {
+    if (Number(otp_input.value) == generated_otp) {
         verification_result.textContent = "OTP Verified Successfully!";
     }
     else {
